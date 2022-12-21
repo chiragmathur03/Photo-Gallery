@@ -1,0 +1,247 @@
+/* A flex container expands items to fill available free space or shrinks them to prevent overflow. 
+Flex was able to take div elements and separate them out, grid does the same thing.
+
+The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed 
+for layout in one dimension - either a row or a column. Grid was designed for two-dimensional layout 
+- rows, and columns at the same time*/
+
+/* ----------------------Master Styles--------------------------- */
+
+/* applying styles using selectors */
+
+/* grab the body of the HTML document */
+body {
+    font-family: "Lato",sans-serif;
+    margin:0px;    /*by default its 8 px*/
+    background-color: ghostwhite;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr; /* fr means fractional unit, 1fr means 100%, that means the column 
+    of the nav-bar should go from n(end) to n(end), and same is for portfolio treated as next row down below 
+    to the nav -bar*/
+}
+
+/* Nav-Bar using flex box */
+/* ------------------------Nav-bar Style--------------------------------- */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.left-side {
+    display: flex;
+}
+
+/* traverse a tree */
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.9em;  /*by default its 1 em, means 16 px*/
+}
+
+.brand-img img {
+    width: 120px;
+    opacity: 0.7;
+    padding-left: 80px;
+}
+
+.right-side .brand{
+    transition: 4s;
+    font-weight: 800;
+}
+
+.email a{
+    text-decoration: none;
+    color: black;
+}
+.email a:hover{
+    color: rgb(75, 71, 71);
+}
+
+.download-link a {
+    text-decoration: none;
+    color:grey;
+}
+
+.download-link:hover a {
+    text-decoration: underline;
+}
+
+.follow-link a{
+    text-decoration: none;
+    color: lightcoral;
+}
+
+
+.wel-tagline {
+    text-align: center; 
+    padding-bottom: 25px; 
+    color: dimgray; 
+}
+
+.wel-tagline:hover {
+    transition: 1s;
+    text-align: center; 
+    padding-bottom: 35px; 
+    color: darkred;
+
+}
+
+/* in div */
+.nav-link-wrapper {
+    height: 22px; 
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+/* in link */
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/* hover effect in div */
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+/* hover effect in link */
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+/* -----------------Portfolio Styles-------------------- -- */
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+}
+
+.portfolio-img-wrapper {
+    height: 350px;
+    width: 100%;
+    background-size: cover; /*cropping the img in the same size */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* align left to right */
+    align-items: center; /*align top to bottom */
+    height: 100%;
+    text-align: center;
+    padding-left: 33%;
+    padding-right: 38%;
+}
+
+/* .img-info img {
+    width: 50%;
+    margin-bottom: 20px;
+} */
+
+.img-text-wrapper .img-info {
+    margin-top: 10px;
+    color: transparent;
+}
+
+.img-text-wrapper:hover .img-info {
+    transition: 4s;
+    /* margin-bottom: 20px; */
+    color: white;
+}
+
+.img-text-wrapper .title{
+    transition: 1s;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: transparent;
+    /* padding-right: 85px;
+    padding-left: 85px; */
+}
+
+.img-text-wrapper:hover .title{
+    font-weight: 600;
+    color: teal;
+} 
+
+.img-darken {
+    transition: 1s;
+    filter: brightness(10% );
+}
+
+.tips-wrapper{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    color: rgb(71, 71, 71);
+}
+/* ------------------About Page Styles----------------- */
+
+.two-row-wrapper {
+    /* display: grid;
+    grid-template-rows: 1fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-content img {
+    width: 20%;
+    align-items: center;
+}
+
+
+.logo-content img:hover {
+    transition: 2s;
+    width: 22%;
+}
+
+.profile-content-wrapper {
+    padding: 10px;
+}
+
+.tagline {
+    padding-top: 20px;
+    transition: 3s;
+    color: gray;
+}
+
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid;
+    color: black;
+}
+
+.active-nav-link a {
+    color: black;
+}
+
+.bottom-wrapper > div {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+
+}
+
+.credits {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+    opacity: 0.6;
+}
