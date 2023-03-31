@@ -1,4 +1,3 @@
-#Photo-Gallery
 Project Title: 📛 Photo Gallery
 
 About the Project: 📚 Built my photography portfolio website that displays pictures in a grid view. Users can view picture details, including exposure, aperture, and ISO, on mouse hover. 
